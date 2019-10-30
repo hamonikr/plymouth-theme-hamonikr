@@ -1,5 +1,5 @@
 Package: hamonikr-plymouth
-Version: 0.0.1
+Version: 0.0.6
 Architecture: all
 Maintainer: HamoniKR Team (HamoniKR OS Developement Group) <hamonikr-packages@googlegroups.com>
 Installed-Size:
@@ -8,4 +8,4 @@ Section: admin
 Priority: optional
 Homepage: https://hamonikr.org
 Description: hamonikr-plymouth
-  하모니카 ME 3.0 OS 로딩 화면
+  하모니카 3.0 OS 로딩 화면
