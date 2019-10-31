@@ -1,0 +1,12 @@
+Source: hamonikr-plymouth
+Section: admin
+Priority: optional
+Maintainer: HamoniKR Team (HamoniKR OS Developement Group) <hamonikr-packages@googlegroups.com>
+Standards-Version: 0.0.6
+
+Package: hamonikr-plymouth
+Architecture: all
+Depends:
+Homepage: https://hamonikr.org
+Description: hamonikr-plymouth
+  하모니카 3.0 OS 로딩 화면
