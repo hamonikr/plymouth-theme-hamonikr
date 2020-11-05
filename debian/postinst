@@ -18,6 +18,8 @@ case "$1" in
     update-alternatives \
         --set default.plymouth \
         /usr/share/plymouth/themes/hamonikr-logo/hamonikr-logo.plymouth
+    
+    update-initramfs -u
 
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)

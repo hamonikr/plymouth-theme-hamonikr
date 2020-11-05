@@ -14,6 +14,7 @@ case "$1" in
         update-alternatives \
             --remove default.plymouth /usr/share/plymouth/themes/hamonikr-logo/hamonikr-logo.plymouth
 
+        update-initramfs -u
     ;;
 
     upgrade)
