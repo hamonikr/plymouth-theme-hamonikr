@@ -1,12 +1,14 @@
-Source: hamonikr-plymouth
+Source: plymouth-theme-hamonikr-jin
 Section: admin
 Priority: optional
-Maintainer: HamoniKR Team (HamoniKR OS Developement Group) <hamonikr-packages@googlegroups.com>
-Standards-Version: 0.0.7
+Maintainer: Kevin Kim <chaeya@gmail.com>
+Standards-Version: 4.1.4
 
-Package: hamonikr-plymouth
+Package: plymouth-theme-hamonikr-jin
 Architecture: all
 Depends:
+Conflicts: 
+Replaces: ubuntu-system-adjustments, mint-artwork, mint-artwork-common, mintsystem
 Homepage: https://hamonikr.org
-Description: hamonikr-plymouth
-  하모니카 3.0 OS 로딩 화면
+Description: hamonikr plymouth theme
+  하모니카 4.0 loading screen theme

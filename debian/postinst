@@ -1,13 +1,35 @@
-#!/bin/bash
+#!/bin/sh
+# postinst script
+# see: dh_installdeb(1)
 
-sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/hamonikr/hamonikr.plymouth 100
+set -e
 
-sudo update-alternatives --config default.plymouth  #here, choose the number of the theme you want to use then hit enter
-sudo update-initramfs -u
-#sudo apt-get install plymouth-x11
-echo
-echo Running 10-second test...
-sudo plymouthd ; sudo plymouth --show-splash ; for ((I=0; I<5; I++)); do sleep 1 ; sudo plymouth --update=test$I ; done ; sudo plymouth --quit
-exit
+case "$1" in
+    configure)
 
+    update-alternatives \
+        --install /usr/share/plymouth/themes/text.plymouth text.plymouth \
+        /usr/share/plymouth/themes/hamonikr-text/hamonikr-text.plymouth 300
 
+    update-alternatives \
+        --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+        /usr/share/plymouth/themes/hamonikr-logo/hamonikr-logo.plymouth 300
+
+    update-alternatives \
+        --set default.plymouth \
+        /usr/share/plymouth/themes/hamonikr-logo/hamonikr-logo.plymouth
+
+    ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+
+    ;;
+    triggered)
+
+    ;;
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

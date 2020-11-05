@@ -1,6 +1,11 @@
-hamonikr-plymouth (0.0.7-1) bionic; urgency=medium
+plymouth-theme-hamonikr (1.1.0) focal; urgency=medium
 
-  * First Commit
+  * Changed theme resource and theme file
 
- -- HamoniKR Team (HamoniKR OS Developement Group) <hamonikr-packages@googlegroups.com>  Wed, 30 Oct 2019 01:40:10 +0900
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 05 Nov 2020 15:53:14 +0900
 
+plymouth-theme-hamonikr (1.0.0) focal; urgency=medium
+
+  * build on HamoniKR 4.0
+
+ -- HamoniKR <pkg@hamonikr.org>  Sat, 17 Oct 2020 18:18:56 +0900

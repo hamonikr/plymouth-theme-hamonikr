@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=HamoniKR Logo
+Description=A theme that features an animated HamoniKR logo.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/hamonikr-logo
+ScriptFile=/usr/share/plymouth/themes/hamonikr-logo/hamonikr-logo.script
