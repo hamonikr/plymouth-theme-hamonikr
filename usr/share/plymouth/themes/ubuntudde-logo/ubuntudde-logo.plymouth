@@ -1,8 +1,0 @@
-[Plymouth Theme]
-Name=ubuntudde Logo
-Description=A theme that features the ubuntudde logo on a blank background.
-ModuleName=script
-
-[script]
-ImageDir=/usr/share/plymouth/themes/ubuntudde-logo
-ScriptFile=/usr/share/plymouth/themes/ubuntudde-logo/ubuntudde-logo.script
