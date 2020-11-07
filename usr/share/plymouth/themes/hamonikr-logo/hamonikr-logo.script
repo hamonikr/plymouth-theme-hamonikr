@@ -171,19 +171,10 @@ fun StringToInteger (str) {
 }
 
 #-----------------------------------------------------------------------------
-# Previous background colour
-# #300a24 --> 0.19, 0.04, 0.14
-# New background colour
-# #2c001e --> 0.16, 0.00, 0.12
-#
-# #0097f4 -->  0, 0.5999, 0.9531
-#Window.SetBackgroundTopColor (0, 0.5999, 0.9531);     # Nice colour on top of the screen fading to
-#Window.SetBackgroundBottomColor (0, 0.5999, 0.9531);  # an equally nice colour on the bottom
-# Set those numbers as you like - take R, G and B decimal values from RGB code of colour you like and divide them with 256.
-#Window.SetBackgroundTopColor (0.85, 0.85, 0.85);
-#Window.SetBackgroundBottomColor (0.75, 0.75, 0.75);
-Window.SetBackgroundTopColor (0, 0, 0);
-Window.SetBackgroundBottomColor (0.25, 0.25, 0.25);
+#Window.SetBackgroundTopColor (0.137, 0.133, 0.192);    # Nice colour on top of the screen fading to
+#Window.SetBackgroundBottomColor (0.216, 0.235, 0.31);  # an equally nice colour on the bottom
+Window.SetBackgroundTopColor (0.18, 0.69, 0.953);
+Window.SetBackgroundBottomColor (0.408, 0.435, 0.82);
 
 bits_per_pixel = Window.GetBitsPerPixel ();
 if (bits_per_pixel == 4) {
