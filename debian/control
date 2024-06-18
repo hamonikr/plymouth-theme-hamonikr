@@ -1,0 +1,15 @@
+Source: plymouth-theme-black
+Section: admin
+Priority: optional
+Maintainer: Kevin Kim <chaeya@gmail.com>
+Standards-Version: 4.1.4
+
+Package: plymouth-theme-black
+Architecture: all
+Depends: plymouth-themes
+Conflicts: 
+Recommends: 
+Replaces: 
+Homepage: https://hamonikr.org
+Description: plymouth theme fo HamoniKR OS
+  Black plymouth theme
