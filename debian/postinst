@@ -7,18 +7,35 @@ set -e
 case "$1" in
     configure)
 
-	if [ -d /usr/share/plymouth/themes/black ]; then
-        update-alternatives \
-            --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-            /usr/share/plymouth/themes/black/black.plymouth 400
+        if [ -d /usr/share/plymouth/themes/bgrt-hamonikr ]; then
+            update-alternatives \
+                --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+                /usr/share/plymouth/themes/bgrt-hamonikr/bgrt-hamonikr.plymouth 400
+        fi
 
-        update-alternatives \
-            --set default.plymouth \
-            /usr/share/plymouth/themes/black/black.plymouth
+        if [ -d /usr/share/plymouth/themes/hamonikr-default ]; then
+            update-alternatives \
+                --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+                /usr/share/plymouth/themes/hamonikr-default/hamonikr-default.plymouth 500
+        fi
+
+        if [ -d /usr/share/plymouth/themes/hamonikr-black ]; then
+            update-alternatives \
+                --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+                /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth 600
+        fi
+
+        if [ -f "/etc/hamonikr/info" ]; then
+            update-alternatives \
+                --set default.plymouth \
+                /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth
+        else
+            update-alternatives \
+                --set default.plymouth \
+                /usr/share/plymouth/themes/bgrt-hamonikr/bgrt-hamonikr.plymouth
+        fi
 
         update-initramfs -u
-    fi
-
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
 

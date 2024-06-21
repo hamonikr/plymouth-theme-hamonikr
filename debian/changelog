@@ -1,11 +1,5 @@
-plymouth-theme-black (1.1.0) stable; urgency=medium
-
-  * Support hidpi resolution, dual monitor
-
- -- HamoniKR <pkg@hamonikr.org>  Fri, 21 Jun 2024 00:20:39 +0900
-
-plymouth-theme-black (1.0.0) stable; urgency=medium
+plymouth-theme-hamonikr (1.0.0) stable; urgency=medium
 
   * Release for ubuntu 24.04
 
- -- HamoniKR <pkg@hamonikr.org>  Tue, 18 Jun 2024 10:30:12 +0900
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 21 Jun 2024 22:14:22 +0900

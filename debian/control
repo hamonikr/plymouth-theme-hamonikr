@@ -1,15 +1,15 @@
-Source: plymouth-theme-black
+Source: plymouth-theme-hamonikr
 Section: admin
 Priority: optional
 Maintainer: Kevin Kim <chaeya@gmail.com>
 Standards-Version: 4.1.4
 
-Package: plymouth-theme-black
+Package: plymouth-theme-hamonikr
 Architecture: all
-Depends: plymouth-themes
+Depends: plymouth
 Conflicts: 
 Recommends: 
-Replaces: 
+Replaces: plymouth-theme-kumkang
 Homepage: https://hamonikr.org
-Description: plymouth theme fo HamoniKR OS
-  Black plymouth theme
+Description: Theme for Plymouth
+ HamoniKR OS Theme for Plymouth, featuring a modern design.

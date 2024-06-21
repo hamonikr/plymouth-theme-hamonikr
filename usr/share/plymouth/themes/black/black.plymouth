@@ -1,9 +1,0 @@
-[Plymouth Theme]
-Name=black
-Description=display black style
-Comment=Kevin Kim
-ModuleName=script
-
-[script]
-ImageDir=/usr/share/plymouth/themes/black
-ScriptFile=/usr/share/plymouth/themes/black/black.script
