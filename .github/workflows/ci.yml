@@ -13,6 +13,12 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
+      - name: Install build dependencies
+        run: |
+          apt-get update
+          apt-get install -y devscripts equivs
+          mk-build-deps --install --remove debian/control
+
       - name: Build Debian Package
         uses: jtdor/build-deb-action@v1
         env:
@@ -22,7 +28,7 @@ jobs:
           buildpackage-opts: --build=binary --no-sign
           # When change deb package name as git rev id
           # before-build-hook: debchange --controlmaint --local="+ci${{ github.run_id }}~git$(git rev-parse --short HEAD)" "CI build"
-          extra-build-deps: devscripts git equivs debhelper build-essential
+          # extra-build-deps: devscripts git equivs debhelper build-essential
           host-arch: amd64
           artifacts-dir: debian/artifacts
 
