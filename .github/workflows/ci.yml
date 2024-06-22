@@ -15,9 +15,9 @@ jobs:
 
       - name: Install build dependencies
         run: |
-          apt-get update
-          apt-get install -y devscripts equivs
-          mk-build-deps --install --remove debian/control
+          sudo apt-get update
+          sudo apt-get install -y devscripts equivs
+          mk-build-deps --install --root-cmd sudo --remove debian/control
 
       - name: Build Debian Package
         uses: jtdor/build-deb-action@v1
