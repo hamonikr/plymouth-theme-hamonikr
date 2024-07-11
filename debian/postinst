@@ -23,16 +23,27 @@ case "$1" in
             update-alternatives \
                 --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
                 /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth 600
+
         fi
 
         if [ -f "/etc/hamonikr/info" ]; then
             update-alternatives \
                 --set default.plymouth \
                 /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth
+
+            if [ -x /usr/sbin/plymouth-set-default-theme ]; then
+                plymouth-set-default-theme hamonikr-black
+            fi  
+
         else
             update-alternatives \
                 --set default.plymouth \
                 /usr/share/plymouth/themes/bgrt-hamonikr/bgrt-hamonikr.plymouth
+
+            if [ -x /usr/sbin/plymouth-set-default-theme ]; then
+                plymouth-set-default-theme hamonikr-black
+            fi              
+            
         fi
 
         update-initramfs -u
