@@ -7,13 +7,12 @@ set -e
 case "$1" in
     configure)
         # fix for debian 12
-        [ -f /etc/os-release ] && . /etc/os-release
-        if [ "X$ID" = "Xdebian" ]; then
-            if [ -d /usr/share/desktop-base/debian-logos ]; then
-                echo "Move debian logo..."
+        if [ -d /usr/share/desktop-base/debian-logos ]; then
+            echo "Move debian logo..."
+            if [ ! -d /usr/share/desktop-base/debian-logos/bak ]; then
                 mkdir /usr/share/desktop-base/debian-logos/bak
-                mv /usr/share/desktop-base/debian-logos/logo-text* /usr/share/desktop-base/debian-logos/bak || true
             fi
+            mv /usr/share/desktop-base/debian-logos/logo-text* /usr/share/desktop-base/debian-logos/bak || true
         fi
 
         if [ -d /usr/share/plymouth/themes/bgrt-hamonikr ]; then
