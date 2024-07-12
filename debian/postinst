@@ -6,6 +6,15 @@ set -e
 
 case "$1" in
     configure)
+        # fix for debian 12
+        [ -f /etc/os-release ] && . /etc/os-release
+        if [ "X$ID" = "Xdebian" ]; then
+            if [ -d /usr/share/desktop-base/debian-logos ]; then
+                echo "Move debian logo..."
+                mkdir /usr/share/desktop-base/debian-logos/bak
+                mv /usr/share/desktop-base/debian-logos/logo-text* /usr/share/desktop-base/debian-logos/bak || true
+            fi
+        fi
 
         if [ -d /usr/share/plymouth/themes/bgrt-hamonikr ]; then
             update-alternatives \
@@ -26,25 +35,13 @@ case "$1" in
 
         fi
 
-        if [ -f "/etc/hamonikr/info" ]; then
-            update-alternatives \
-                --set default.plymouth \
-                /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth
+        update-alternatives \
+            --set default.plymouth \
+            /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth
 
-            if [ -x /usr/sbin/plymouth-set-default-theme ]; then
-                plymouth-set-default-theme hamonikr-black
-            fi  
-
-        else
-            update-alternatives \
-                --set default.plymouth \
-                /usr/share/plymouth/themes/bgrt-hamonikr/bgrt-hamonikr.plymouth
-
-            if [ -x /usr/sbin/plymouth-set-default-theme ]; then
-                plymouth-set-default-theme hamonikr-black
-            fi              
-            
-        fi
+        if [ -x /usr/sbin/plymouth-set-default-theme ]; then
+            plymouth-set-default-theme hamonikr-black
+        fi  
 
         update-initramfs -u
     ;;
