@@ -10,6 +10,8 @@ case "$1" in
             default.plymouth /usr/share/plymouth/themes/hamonikr-default/hamonikr-default.plymouth || true
         update-alternatives --remove \
             default.plymouth /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth || true
+        update-alternatives --remove \
+            default.plymouth /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth || true            
     ;;
     
     upgrade)

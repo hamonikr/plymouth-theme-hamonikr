@@ -8,7 +8,7 @@ ModuleName=two-step
 [two-step]
 Font=Noto Sans CJK KR 12
 TitleFont=Noto Sans CJK KR Light 30
-ImageDir=/usr/share/plymouth/themes/hamonikr-black/resources
+ImageDir=/usr/share/plymouth/themes/hamonikr-flame/resources
 DialogHorizontalAlignment=.5
 DialogVerticalAlignment=.5
 TitleHorizontalAlignment=.5

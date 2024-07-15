@@ -18,13 +18,19 @@ case "$1" in
         if [ -d /usr/share/plymouth/themes/bgrt-hamonikr ]; then
             update-alternatives \
                 --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-                /usr/share/plymouth/themes/bgrt-hamonikr/bgrt-hamonikr.plymouth 400
+                /usr/share/plymouth/themes/bgrt-hamonikr/bgrt-hamonikr.plymouth 500
         fi
 
         if [ -d /usr/share/plymouth/themes/hamonikr-default ]; then
             update-alternatives \
                 --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
                 /usr/share/plymouth/themes/hamonikr-default/hamonikr-default.plymouth 500
+        fi
+
+        if [ -d /usr/share/plymouth/themes/hamonikr-default ]; then
+            update-alternatives \
+                --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+                /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth 500
         fi
 
         if [ -d /usr/share/plymouth/themes/hamonikr-black ]; then
@@ -36,10 +42,10 @@ case "$1" in
 
         update-alternatives \
             --set default.plymouth \
-            /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth
+            /usr/share/plymouth/themes/hamonikr-default/hamonikr-default.plymouth
 
         if [ -x /usr/sbin/plymouth-set-default-theme ]; then
-            plymouth-set-default-theme hamonikr-black
+            plymouth-set-default-theme hamonikr-default
         fi  
 
         update-initramfs -u
