@@ -42,10 +42,10 @@ case "$1" in
 
         update-alternatives \
             --set default.plymouth \
-            /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth
+            /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth
 
         if [ -x /usr/sbin/plymouth-set-default-theme ]; then
-            plymouth-set-default-theme hamonikr-flame
+            plymouth-set-default-theme hamonikr-black
         fi  
 
         update-initramfs -u
