@@ -27,7 +27,7 @@ case "$1" in
                 /usr/share/plymouth/themes/hamonikr-default/hamonikr-default.plymouth 500
         fi
 
-        if [ -d /usr/share/plymouth/themes/hamonikr-default ]; then
+        if [ -d /usr/share/plymouth/themes/hamonikr-flame ]; then
             update-alternatives \
                 --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
                 /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth 500
@@ -42,10 +42,10 @@ case "$1" in
 
         update-alternatives \
             --set default.plymouth \
-            /usr/share/plymouth/themes/hamonikr-default/hamonikr-default.plymouth
+            /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth
 
         if [ -x /usr/sbin/plymouth-set-default-theme ]; then
-            plymouth-set-default-theme hamonikr-default
+            plymouth-set-default-theme hamonikr-flame
         fi  
 
         update-initramfs -u

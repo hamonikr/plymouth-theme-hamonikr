@@ -1,3 +1,10 @@
+plymouth-theme-hamonikr (1.1.2) paektu; urgency=medium
+
+  [Kevin Kim]
+  * Move watermark position to bottom
+
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 01 Aug 2024 14:12:02 +0900
+
 plymouth-theme-hamonikr (1.1.1) paektu; urgency=medium
 
   [Kevin Kim]
