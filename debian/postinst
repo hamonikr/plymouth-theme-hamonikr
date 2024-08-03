@@ -10,45 +10,62 @@ case "$1" in
         if [ -d /usr/share/desktop-base/debian-logos ]; then
             echo "Move debian logo..."
             if [ ! -d /usr/share/desktop-base/debian-logos/bak ]; then
-                mkdir /usr/share/desktop-base/debian-logos/bak
+                mkdir -p /usr/share/desktop-base/debian-logos/bak
             fi
             mv /usr/share/desktop-base/debian-logos/logo-text* /usr/share/desktop-base/debian-logos/bak || true
         fi
 
         if [ -d /usr/share/plymouth/themes/bgrt-hamonikr ]; then
-            update-alternatives \
-                --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-                /usr/share/plymouth/themes/bgrt-hamonikr/bgrt-hamonikr.plymouth 500
+            if command -v update-alternatives >/dev/null 2>&1; then
+                update-alternatives \
+                    --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+                    /usr/share/plymouth/themes/bgrt-hamonikr/bgrt-hamonikr.plymouth 500
+            fi
         fi
 
         if [ -d /usr/share/plymouth/themes/hamonikr-default ]; then
-            update-alternatives \
-                --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-                /usr/share/plymouth/themes/hamonikr-default/hamonikr-default.plymouth 500
+            if command -v update-alternatives >/dev/null 2>&1; then
+                update-alternatives \
+                    --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+                    /usr/share/plymouth/themes/hamonikr-default/hamonikr-default.plymouth 500
+            fi
         fi
 
         if [ -d /usr/share/plymouth/themes/hamonikr-flame ]; then
-            update-alternatives \
-                --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-                /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth 500
+            if command -v update-alternatives >/dev/null 2>&1; then
+                update-alternatives \
+                    --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+                    /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth 500
+            fi
         fi
 
         if [ -d /usr/share/plymouth/themes/hamonikr-black ]; then
-            update-alternatives \
-                --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-                /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth 600
-
+            if command -v update-alternatives >/dev/null 2>&1; then
+                update-alternatives \
+                    --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+                    /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth 600
+            fi
         fi
 
-        update-alternatives \
-            --set default.plymouth \
-            /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth
+        if [ -d /usr/share/plymouth/themes/hamonikr-black ]; then
+            if command -v update-alternatives >/dev/null 2>&1; then
+                update-alternatives \
+                    --set default.plymouth \
+                    /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth
+            fi
+        fi
 
-        if [ -x /usr/sbin/plymouth-set-default-theme ]; then
-            plymouth-set-default-theme hamonikr-black
+        if command -v plymouth-set-default-theme >/dev/null 2>&1; then
+            if [ "$(uname -m)" = "aarch64" ]; then
+                plymouth-set-default-theme hamonikr-flame
+            else
+                plymouth-set-default-theme hamonikr-black
+            fi
         fi  
 
-        update-initramfs -u
+        if command -v update-initramfs >/dev/null 2>&1; then
+            update-initramfs -u
+        fi
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
 
