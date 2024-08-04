@@ -1,3 +1,9 @@
+plymouth-theme-hamonikr (1.1.4) paektu; urgency=medium
+
+  * Release for bookworm arm64
+
+ -- HamoniKR <pkg@hamonikr.org>  Sun, 04 Aug 2024 13:40:35 +0900
+
 plymouth-theme-hamonikr (1.1.3+h2) paektu; urgency=medium
 
   * Fixed postinst
