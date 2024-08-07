@@ -33,14 +33,20 @@ MessageBelowAnimation=true
 [boot-up]
 UseEndAnimation=true
 UseFirmwareBackground=false
+WatermarkHorizontalAlignment=.5
+WatermarkVerticalAlignment=.90
 
 [shutdown]
 UseEndAnimation=false
 UseFirmwareBackground=false
+WatermarkHorizontalAlignment=-1
+WatermarkVerticalAlignment=-1
 
 [reboot]
 UseEndAnimation=false
 UseFirmwareBackground=false
+WatermarkHorizontalAlignment=-1
+WatermarkVerticalAlignment=-1
 
 [updates]
 UseFirmwareBackground=false
