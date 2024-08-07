@@ -47,7 +47,7 @@ case "$1" in
             if command -v update-alternatives >/dev/null 2>&1; then
                 update-alternatives \
                     --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-                    /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth 600
+                    /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth 500
             fi
         fi
 
@@ -55,7 +55,7 @@ case "$1" in
             if command -v update-alternatives >/dev/null 2>&1; then
                 update-alternatives \
                     --set default.plymouth \
-                    /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth
+                    /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth
             fi
         fi
 

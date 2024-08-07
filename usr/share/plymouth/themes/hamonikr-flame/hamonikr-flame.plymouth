@@ -35,11 +35,11 @@ UseEndAnimation=true
 UseFirmwareBackground=false
 
 [shutdown]
-UseEndAnimation=true
+UseEndAnimation=false
 UseFirmwareBackground=false
 
 [reboot]
-UseEndAnimation=true
+UseEndAnimation=false
 UseFirmwareBackground=false
 
 [updates]
