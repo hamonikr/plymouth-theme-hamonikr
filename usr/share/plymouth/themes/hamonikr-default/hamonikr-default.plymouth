@@ -16,7 +16,7 @@ TitleVerticalAlignment=.4
 HorizontalAlignment=.5
 VerticalAlignment=.5
 WatermarkHorizontalAlignment=.5
-WatermarkVerticalAlignment=.90
+WatermarkVerticalAlignment=.95
 Transition=none
 TransitionDuration=0.0
 BackgroundStartColor=0x000000
@@ -33,20 +33,14 @@ MessageBelowAnimation=true
 [boot-up]
 UseEndAnimation=true
 UseFirmwareBackground=false
-WatermarkHorizontalAlignment=.5
-WatermarkVerticalAlignment=.90
 
 [shutdown]
-UseEndAnimation=false
+UseEndAnimation=true
 UseFirmwareBackground=false
-WatermarkHorizontalAlignment=-1
-WatermarkVerticalAlignment=-1
 
 [reboot]
-UseEndAnimation=false
+UseEndAnimation=true
 UseFirmwareBackground=false
-WatermarkHorizontalAlignment=-1
-WatermarkVerticalAlignment=-1
 
 [updates]
 UseFirmwareBackground=false
