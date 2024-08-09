@@ -23,7 +23,7 @@ case "$1" in
             if command -v update-alternatives >/dev/null 2>&1; then
                 update-alternatives \
                     --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-                    /usr/share/plymouth/themes/bgrt-hamonikr/bgrt-hamonikr.plymouth 500
+                    /usr/share/plymouth/themes/bgrt-hamonikr/bgrt-hamonikr.plymouth 300
             fi
         fi
 
@@ -31,7 +31,7 @@ case "$1" in
             if command -v update-alternatives >/dev/null 2>&1; then
                 update-alternatives \
                     --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-                    /usr/share/plymouth/themes/hamonikr-default/hamonikr-default.plymouth 500
+                    /usr/share/plymouth/themes/hamonikr-default/hamonikr-default.plymouth 300
             fi
         fi
 
@@ -39,7 +39,7 @@ case "$1" in
             if command -v update-alternatives >/dev/null 2>&1; then
                 update-alternatives \
                     --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-                    /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth 500
+                    /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth 300
             fi
         fi
 
@@ -47,28 +47,37 @@ case "$1" in
             if command -v update-alternatives >/dev/null 2>&1; then
                 update-alternatives \
                     --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
-                    /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth 500
+                    /usr/share/plymouth/themes/hamonikr-black/hamonikr-black.plymouth 300
             fi
         fi
 
-        if [ -d /usr/share/plymouth/themes/hamonikr-black ]; then
+        if [ -d /usr/share/plymouth/themes/hamonikr ]; then
             if command -v update-alternatives >/dev/null 2>&1; then
                 update-alternatives \
-                    --set default.plymouth \
-                    /usr/share/plymouth/themes/hamonikr-flame/hamonikr-flame.plymouth
+                    --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+                    /usr/share/plymouth/themes/hamonikr/hamonikr.plymouth 400
             fi
         fi
 
-        # pi5
-        if command -v plymouth-set-default-theme >/dev/null 2>&1; then
-            echo "Set hamonikr-flame as default with plymouth-set-default-theme ..."
-            plymouth-set-default-theme hamonikr-flame || true
-        fi  
+        # Set default theme
+        if command -v update-alternatives >/dev/null 2>&1; then
+            update-alternatives \
+                --set default.plymouth \
+                /usr/share/plymouth/themes/hamonikr/hamonikr.plymouth
+        fi
 
         if command -v update-initramfs >/dev/null 2>&1; then
-            echo "Update initramfs ..."
             update-initramfs -u
         fi
+
+        # pi5, LMDE
+        if command -v plymouth-set-default-theme >/dev/null 2>&1; then
+            plymouth-set-default-theme -R hamonikr-flame || true
+        fi
+
+        # Update grub title
+        /etc/hamonikr/adjustments/10-adjust-grub-title.execute || true
+
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
 

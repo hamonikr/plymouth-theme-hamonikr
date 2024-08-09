@@ -1,3 +1,16 @@
+plymouth-theme-hamonikr (1.1.8) paektu; urgency=medium
+
+  * Add plymouth-theme-spinner dependency
+   - Cause this package include two-step.so
+
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 09 Aug 2024 14:20:54 +0900
+
+plymouth-theme-hamonikr (1.1.7) paektu; urgency=medium
+
+  * Add simple hamonikr logo theme
+
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 08 Aug 2024 22:29:15 +0900
+
 plymouth-theme-hamonikr (1.1.6) paektu; urgency=medium
 
   * Changed watermark image position

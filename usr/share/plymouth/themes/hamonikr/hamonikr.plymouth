@@ -1,0 +1,65 @@
+[Plymouth Theme]
+Name=asspining
+Description=based on spinfinity plymouth theme
+ModuleName=two-step
+
+[two-step]
+Font=Cantarell 12
+TitleFont=Cantarell Light 30
+ImageDir=/usr/share/plymouth/themes/hamonikr
+DialogHorizontalAlignment=.5
+DialogVerticalAlignment=.382
+TitleHorizontalAlignment=.5
+TitleVerticalAlignment=.382
+HorizontalAlignment=0.5
+VerticalAlignment=0.55
+WatermarkHorizontalAlignment=.5
+WatermarkVerticalAlignment=.96
+Transition=none
+TransitionDuration=0.0
+BackgroundStartColor=0x0e0e0e
+BackgroundEndColor=0x0e0e0e
+ProgressBarHorizontalAlignment=0.5
+ProgressBarVerticalAlignment=1.0
+ProgressBarWidth=350
+ProgressBarHeight=3
+ProgressBarBackgroundColor=0x0e0e0e
+ProgressBarForegroundColor=0x0cd5bb
+MessageBelowAnimation=true
+
+[boot-up]
+UseProgressBar=true
+UseAnimation=true
+
+[shutdown]
+UseProgressBar=false
+UseAnimation=true
+
+[reboot]
+UseProgressBar=false
+UseAnimation=true
+
+[updates]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+UseAnimation=true
+Title=Installing Updates...
+SubTitle=Do not turn off your computer
+
+[system-upgrade]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+UseAnimation=true
+Title=Upgrading System...
+SubTitle=Do not turn off your computer
+
+[firmware-upgrade]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseAnimation=true
+UseProgressBar=true
+Title=Upgrading Firmware...
+SubTitle=Do not turn off your computer
+

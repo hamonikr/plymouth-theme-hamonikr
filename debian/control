@@ -6,7 +6,7 @@ Standards-Version: 4.1.4
 
 Package: plymouth-theme-hamonikr
 Architecture: all
-Depends: plymouth
+Depends: plymouth, plymouth-theme-spinner
 Conflicts: 
 Recommends: 
 Replaces: plymouth-theme-kumkang
